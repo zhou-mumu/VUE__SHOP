@@ -21,6 +21,7 @@
           :collapse= "isCollapse"
           :collapse-transition="false"
           :router="true"
+          :default-active="$route.path"
         >
           <!-- 一级菜单 -->
           <el-submenu :index="item.id + ''" v-for="item in menulist" :key="item.id">
@@ -105,6 +106,9 @@ export default {
 }
 .el-aside {
   background-color: #333744;
+  .el-menu {
+    border-right: none;
+  }
 }
 .el-main {
   background-color: #eaedf1;
