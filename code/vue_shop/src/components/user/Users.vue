@@ -266,7 +266,7 @@ export default {
       }
       this.$message.success("更新用户状态成功");
     },
-    // 监听添加用户对话框的关闭事件
+    // 控制增加用户框的显示与否
     addDialogClosed() {
       this.$refs.addFormRef.resetFields()
     },
@@ -299,6 +299,10 @@ export default {
 
       this.editForm = res.data
       this.editDialogVisible = true
+    },
+    // 监听修改用户对话框的关闭事件
+    editDialogClosed() {
+      this.$refs.editFormRef.resetFields()
     },
     // 修改用户信息并提交
     editUserInfo() {
